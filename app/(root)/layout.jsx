@@ -7,6 +7,8 @@ import LeftSidebar from "@/components/shared/LeftSidebar";
 import RightSidebar from "@/components/shared/RightSidebar";
 import Bottombar from "@/components/shared/Bottombar";
 
+import "../globals.css";
+
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
