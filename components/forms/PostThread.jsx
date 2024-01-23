@@ -15,8 +15,7 @@ import Image from "next/image";
 import { Textarea } from "@/components/ui/textarea";
 import { usePathname, useRouter } from "next/navigation";
 import { ThreadValidation } from "@/lib/validations/thread.validation";
-
-// import { updateUser } from "@/lib/actions/user.actions";
+import { CreateThread } from "@/lib/actions/thread.actions";
 
 function PostThread({ userId }) {
   const pathname = usePathname();
@@ -30,7 +29,16 @@ function PostThread({ userId }) {
     },
   });
 
-  async function onSubmit(values) {}
+  async function onSubmit(values) {
+    await CreateThread({
+      text: values.thread,
+      author: userId,
+      communityId: null,
+      path: pathname,
+    });
+
+    router.push("/");
+  }
 
   return (
     <Form {...form}>
