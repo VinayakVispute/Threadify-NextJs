@@ -15,7 +15,15 @@ async function ThreadsTab({ currentUserId, accountId, accountType }) {
           id={thread?.id}
           currentUser={currentUserId}
           parentId={thread?.parentId}
-          author={thread?.author} //todo
+          author={
+            accountType === "User"
+              ? { name: result.name, image: result.image, id: result.id }
+              : {
+                  name: thread.author.name,
+                  image: thread.author.image,
+                  id: thread.author.id,
+                }
+          } //todo
           community={thread?.community} //todo
           content={thread?.text}
           createdAt={thread?.createdAt}
