@@ -8,7 +8,6 @@ function ProfileHeader({
   imgUrl,
   bio,
 }) {
-  console.log(imgUrl);
   return (
     <div className="flex w-full flex-col justify-start">
       <div className="flex items-center justify-between">

@@ -4,7 +4,6 @@ import ThreadCard from "../cards/ThreadCard";
 
 async function ThreadsTab({ currentUserId, accountId, accountType }) {
   let result = await fetchUserPosts(accountId);
-  console.log(result);
   if (!result) redirect("/");
 
   return (
